@@ -22,12 +22,12 @@ public class HelpMeToFoodDatabaseMigrationApplication {
 	public DataSource dataSource() {
 		String database = System.getenv("HMTF_DB_NAME");
 		String username = System.getenv("HMTF_DB_USER");
-		String ppassword = System.getenv("HMTF_DB_PWD");
+		String password = System.getenv("HMTF_DB_PWD");
 
 		return DataSourceBuilder
 				.create()
 				.username(username)
-				.password(ppassword)
+				.password(password)
 				.url("jdbc:mysql://localhost:3306/" + database  + "?useSSL=false")
 				.driverClassName("com.mysql.jdbc.Driver")
 				.build();
